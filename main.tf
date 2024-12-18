@@ -84,7 +84,7 @@ resource "aws_security_group" "runner-sg" {
 resource "aws_instance" "runner-ec2" {
   ami                    = data.aws_ami.ami.image_id
   instance_type          = "t2.large"
-  # Replace below with your keypair name
+  mykey
   key_name               = *CHANGE THIS TO YOUR KEY PAIR NAME*
   vpc_security_group_ids = [aws_security_group.runner-sg.id]
   iam_instance_profile   = aws_iam_instance_profile.runnerinstance-profile.name
